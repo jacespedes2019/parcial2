@@ -27,7 +27,7 @@ function DetailBanda() {
                 <ListarBandas/>
             </Col>
             <Col>
-                <Card style={{ width: "15rem", height: "24rem" }} className="mb-3">
+                <Card style={{ width: "15rem" }} className="mb-3">
                     <Card.Img
                         style={{ height: "14rem" }}
                         variant="top"
@@ -37,6 +37,9 @@ function DetailBanda() {
                         <Card.Title>
                                 {banda.name}
                         </Card.Title>
+                        <Card.Text>
+                        {banda.description}
+                        </Card.Text>
                     </Card.Body>
                 </Card>
             </Col>

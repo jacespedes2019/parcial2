@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 
 const ListarBandas = (props) => {
   const [bandas, setBandas] = useState([]);
+  const [bandaMasVieja,setVieja] = useState({});
   useEffect(() => {
     const URL =
       "https://gist.githubusercontent.com/josejbocanegra/806a4dcd1af61b4cc498d24c52e84320/raw/8711b7af9091d2831ed043563cad2a61311b0a5f/music-bands.json";
@@ -13,8 +14,20 @@ const ListarBandas = (props) => {
       .then((data) => data.json())
       .then((data) => {
         setBandas(data);
+        masVieja(data);
       });
   }, []);
+  const masVieja=(bandas)=>{
+    let a=2022;
+    let ban=bandas[0];
+    for (var i = 0; i < bandas.length; i++) {
+      if(bandas[i].foundation_year<a){
+        a=bandas[i].foundation_year
+        ban=bandas[i]
+      }
+    }
+    setVieja(ban);
+  }
 
  return (
     <div className="container">
@@ -40,6 +53,7 @@ const ListarBandas = (props) => {
         ))}
       </tbody>
     </table>
+    <div>La banda más antigua es {bandaMasVieja.name} y fue fundada hace {2022-bandaMasVieja.foundation_year}</div>
   </div>
  );
 }

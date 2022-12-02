@@ -1,3 +1,9 @@
 {
-    
+    "Name": "Nombre",
+    "Country": "Pais",
+    "Genre": "Género",
+    "Fundation": "Fundación",
+    "in":"La banda más antigua es",
+    "out": " y fue fundada hace",
+    "ago": "años"
 }

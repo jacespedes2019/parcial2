@@ -53,7 +53,7 @@ const ListarBandas = (props) => {
         ))}
       </tbody>
     </table>
-    <div>La banda más antigua es {bandaMasVieja.name} y fue fundada hace {2022-bandaMasVieja.foundation_year}</div>
+    <div><FormattedMessage id="in" /> {bandaMasVieja.name} <FormattedMessage id="out" /> {2022-bandaMasVieja.foundation_year} <FormattedMessage id="ago" /></div>
   </div>
  );
 }

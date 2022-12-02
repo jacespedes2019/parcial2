@@ -6,7 +6,7 @@ const Banda = (props) => {
   return (
     <tr>
       <th scope="row">{props.banda.id}</th>
-      <LinkContainer to={"/bandas/".concat(props.banda.id)} ><td>
+      <LinkContainer to={"/bandas/".concat(props.banda.id)}><td>
           {props.banda.name}
       </td></LinkContainer>
       <td>{props.banda.country}</td>

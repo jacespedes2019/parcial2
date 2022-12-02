@@ -2,5 +2,8 @@
     "Name": "Name",
     "Country": "Country",
     "Genre": "Genre",
-    "Fundation": "Fundation"
+    "Fundation": "Fundation",
+    "in":"The oldest band is",
+    "out": " and its year of fundation was",
+    "ago": "years ago"
 }

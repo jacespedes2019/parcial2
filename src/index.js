@@ -2,16 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import localeEsMessages from "./locales/es";
+import localeEnMessages from "./locales/en";
+import { IntlProvider } from 'react-intl';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// get browser language without the region code
+//const language = navigator.language.split(/[-_]/)[0];
+const language="en"
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const messages = {
+  'en': localeEnMessages,
+  'es': localeEsMessages
+};
+root.render(
+  <IntlProvider locale={language} messages={messages[language]}>
+    <React.StrictMode>
+      <App language={language} />
+    </React.StrictMode>
+  </IntlProvider>
+
+);

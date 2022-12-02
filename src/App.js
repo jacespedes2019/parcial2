@@ -1,24 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ListarBandas from './components/listarBandas';
+import DetailBanda from './components/detailBanda'
+import { useEffect, useState } from 'react';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <BrowserRouter>
+       <Routes>
+         <Route path="/" element={<ListarBandas />} />
+         <Route path="/bandas/:bandaId" element={<DetailBanda />} />
+       </Routes>
+     </BrowserRouter>
+   </div>
   );
 }
 
